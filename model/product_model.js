@@ -13,7 +13,8 @@ rating      :   { type:String},
 boughtpast  :   { type:String},
 stock       :   { type:String},
 category    :   { type:String},
-skuid       :   { type:String}
+skuid       :   { type:String},
+cat_id      :   { type:String}
 
 
 
