@@ -20,7 +20,6 @@ exports.insert = async (req, res) => {
 
 exports.delete = async (req, res) => {
 
-
     var data = await admin.findByIdAndDelete(req.params.id);
 
     res.status(200).json({
@@ -36,7 +35,6 @@ exports.update = async (req, res) => {
     var bcrypt_pass = req.body.password;
 
     req.body.password = await bcrypt.hash(bcrypt_pass, 10);
-
 
     var data = await admin.findByIdAndUpdate(req.params.id, req.body)
 
