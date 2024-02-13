@@ -33,6 +33,11 @@ exports.delete = async (req, res) => {
 
 exports.update = async (req, res) => {
 
+    var bcrypt_pass = req.body.password;
+
+    req.body.password = await bcrypt.hash(bcrypt_pass, 10);
+
+
     var data = await admin.findByIdAndUpdate(req.params.id, req.body)
 
     res.status(200).json({
